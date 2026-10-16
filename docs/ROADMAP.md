@@ -11,12 +11,15 @@
 
 ## Future UI development
 
-- [ ] Add the approved dashboard design asset or reference link.
-- [ ] Define final typography, color, spacing, and surface tokens.
-- [ ] Build responsive navigation and page layouts from the approved reference.
-- [ ] Add UI primitives and dashboard components as needed.
-- [ ] Introduce typed mock fixtures and accessible chart components.
-- [ ] Implement route-specific interfaces and interaction states.
+- [x] Use the supplied local mountain-and-lake background asset.
+- [x] Establish initial typography, spacing, and glass surface styles.
+- [x] Build responsive sidebar, header, and a keyboard-accessible mobile drawer.
+- [x] Add reusable glass cards and the first two dashboard feature cards.
+- [x] Add typed mock scores, alerts, profile data, and an accessible score ring.
+- [x] Redirect the homepage to the dashboard and label all security data as demonstration content.
+- [ ] Refine against any additional approved dashboard design assets.
+- [x] Add persistent Glass Appearance settings with shared opacity and blur controls.
+- [ ] Implement interfaces and interaction states for the remaining seven routes.
 - [ ] Add restrained animations that respect reduced-motion settings.
 - [ ] Select test tooling and cover meaningful user flows.
 

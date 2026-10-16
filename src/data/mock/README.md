@@ -1,3 +1,3 @@
 # Mock data
 
-Future deterministic development fixtures belong here. Do not add real customer data or secrets.
+Typed dashboard fixtures live in `dashboard.ts`, and the demonstration account lives in `profile.ts`. Scores, trends, alert timestamps, and account details are fixed examples, not live monitoring. Do not add real customer data or secrets.
