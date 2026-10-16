@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: Arial, Helvetica, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
   --font-mono: "Courier New", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -42,6 +42,82 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Local landscape provided with the project; the gradient is also a fallback. */
+.dashboard-landscape {
+  background-color: #1e354a;
+  background-image: url("/images/dashboard-background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.dashboard-overlay {
+  background: linear-gradient(110deg, rgb(8 22 39 / 56%), rgb(14 25 43 / 36%) 65%, rgb(17 26 42 / 29%)),
+    linear-gradient(0deg, rgb(8 23 41 / 48%), transparent 70%);
+}
+
+.dashboard-shell {
+  --glass-opacity: 0.25;
+  --glass-blur: 24px;
+  --glass-contrast-layer: linear-gradient(rgb(8 20 35 / 32%), rgb(8 20 35 / 32%));
+  color-scheme: dark;
+  --background: #122238;
+  --foreground: #f8fafc;
+  --muted-foreground: #cbd5e1;
+  --ring: #a5f3fc;
+}
+
+/* Shared utility and existing surface aliases inherit the shell's preferences. */
+.glass-surface,
+.glass-panel,
+.sidebar-surface,
+.header-surface {
+  background-color: rgb(var(--glass-tint, 20 35 54) / var(--glass-opacity));
+  background-image: var(--glass-contrast-layer);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.glass-panel {
+  border: 1px solid rgb(255 255 255 / 22%);
+  background-image: linear-gradient(135deg, rgb(255 255 255 / 13%), rgb(255 255 255 / 3%)), var(--glass-contrast-layer);
+  box-shadow: 0 16px 48px rgb(5 16 30 / 13%), inset 0 1px 0 rgb(255 255 255 / 8%);
+}
+
+.sidebar-surface {
+  --glass-tint: 12 27 44;
+  background-image: linear-gradient(170deg, rgb(255 255 255 / 6%), transparent 70%), var(--glass-contrast-layer);
+}
+
+.header-surface {
+  --glass-tint: 16 29 45;
+}
+
+.mobile-navigation::backdrop {
+  background: rgb(3 10 20 / 60%);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+@supports not ((backdrop-filter: blur(24px)) or (-webkit-backdrop-filter: blur(24px))) {
+  .glass-surface,
+  .glass-panel,
+  .sidebar-surface,
+  .header-surface {
+    background-color: rgb(15 29 47 / 96%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 :root {

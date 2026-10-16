@@ -1,3 +1,3 @@
 # Images
 
-Future static image assets belong here and are served from /images/.
+Static image assets are served from /images/. The supplied `dashboard-background.jpg` is the dashboard's mountain-and-lake sunset background; no external image is fetched.

@@ -1,3 +1,3 @@
 # Dashboard components
 
-Future dashboard-specific components belong here. No dashboard UI is implemented yet.
+Dashboard-specific components live here: the welcome banner, Security Overview, accessible SVG score ring, and Security Alerts. Feature cards consume typed sample data from `src/data/mock/`; no real monitoring is connected.
